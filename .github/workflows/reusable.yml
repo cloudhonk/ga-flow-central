@@ -4,11 +4,6 @@ run-name: Github Reusable Workflow
 
 on:
   workflow_call:
-    inputs:
-      DAY_OF_WEEK:
-        required: true
-        type: string
-        default: "Sunday"
 
 jobs:
   called-workflow:
