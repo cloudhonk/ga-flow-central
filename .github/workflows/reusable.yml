@@ -1,0 +1,23 @@
+name: Reusable Github Actions - Demo
+
+run-name: Github Reusable Workflow
+
+on:
+  workflow_call:
+    inputs:
+      DAY_OF_WEEK:
+        required: true
+        type: string
+        default: "Sunday"
+
+jobs:
+  called-workflow:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Repository
+        uses: actions/checkout@v3
+
+      - name: Print the environment variables
+        run: |
+          echo ${{ inputs.DAY_OF_WEEK }}
+
