@@ -4,6 +4,11 @@ run-name: Github Reusable Workflow
 
 on:
   workflow_call:
+    inputs:
+      DAY_OF_WEEK:
+        required: true
+        type: string
+        default: "Tuesday"
 
 jobs:
   called-workflow:
@@ -20,3 +25,7 @@ jobs:
         run: |
           git clone https://${{ secrets.ORG_GITHUB_TOKEN }}@github.com/cloudhonk/ga-flow-central
           ls ga-flow-central
+
+      - name: Print the environment variables
+        run: |
+          echo ${{ inputs.DAY_OF_WEEK }}
