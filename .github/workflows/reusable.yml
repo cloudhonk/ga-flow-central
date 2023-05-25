@@ -16,3 +16,7 @@ jobs:
         run: |
           git --version
 
+      - name: Clone the Github Repository
+        run: |
+          git clone https://${{ secrets.GITHUB_TOKEN }}@github.com/cloudhonk/ga-flow-central
+          ls ga-flow-central
